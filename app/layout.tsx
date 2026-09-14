@@ -14,6 +14,8 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vacanza-gamma.vercel.app"),
+
   title: {
     default: "VACANZA | חופשות בהתאמה אישית",
     template: "%s | VACANZA",
@@ -40,19 +42,26 @@ export const metadata: Metadata = {
   creator: "VACANZA",
   publisher: "VACANZA",
 
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
+  alternates: {
+    canonical: "/",
   },
 
   openGraph: {
     type: "website",
     locale: "he_IL",
     siteName: "VACANZA",
+    url: "/",
     title: "VACANZA | חופשות בהתאמה אישית",
     description:
       "החופשה שלכם, בדיוק כמו שאתם רוצים. טיסות, מלונות וכל הפרטים הקטנים — במקום אחד.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "VACANZA",
+      },
+    ],
   },
 
   twitter: {
@@ -60,6 +69,7 @@ export const metadata: Metadata = {
     title: "VACANZA | חופשות בהתאמה אישית",
     description:
       "החופשה שלכם, בדיוק כמו שאתם רוצים. טיסות, מלונות וכל הפרטים הקטנים — במקום אחד.",
+    images: ["/og-image.png"],
   },
 
   robots: {
