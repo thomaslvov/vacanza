@@ -62,12 +62,6 @@ export const metadata: Metadata = {
       "החופשה שלכם, בדיוק כמו שאתם רוצים. טיסות, מלונות וכל הפרטים הקטנים — במקום אחד.",
   },
 
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
-
   robots: {
     index: true,
     follow: true,
@@ -81,9 +75,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="he" dir="rtl">
-      <body
-        className={`${cormorant.variable} ${manrope.variable}`}
-      >
+      <body className={`${cormorant.variable} ${manrope.variable}`}>
         {children}
       </body>
     </html>
