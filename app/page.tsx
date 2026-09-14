@@ -446,18 +446,8 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <a
               href="#hero"
-              onClick={(event) => {
-                event.preventDefault();
-                const toggle = mobileMenuToggleRef.current;
-                if (toggle) {
-                  toggle.checked = false;
-                  toggle.dispatchEvent(new Event("change", { bubbles: true }));
-                }
-                requestAnimationFrame(() => {
-                  const element = document.querySelector("#hero");
-                  element?.scrollIntoView({ behavior: "smooth", block: "start" });
-                  window.history.replaceState(null, "", "#hero");
-                });
+              onClick={() => {
+                if (mobileMenuToggleRef.current) mobileMenuToggleRef.current.checked = false;
               }}
               className="pointer-events-auto text-[25px] tracking-[0.18em] text-white"
               style={{ fontFamily: "var(--font-cormorant)" }}
@@ -487,19 +477,8 @@ export default function Home() {
               <a
                 key={href}
                 href={href}
-                onClick={(event) => {
-                  event.preventDefault();
-                  const target = href;
-                  const toggle = mobileMenuToggleRef.current;
-                  if (toggle) {
-                    toggle.checked = false;
-                    toggle.dispatchEvent(new Event("change", { bubbles: true }));
-                  }
-                  requestAnimationFrame(() => {
-                    const element = document.querySelector(target);
-                    element?.scrollIntoView({ behavior: "smooth", block: "start" });
-                    window.history.replaceState(null, "", target);
-                  });
+                onClick={() => {
+                  if (mobileMenuToggleRef.current) mobileMenuToggleRef.current.checked = false;
                 }}
                 className="pointer-events-auto text-2xl transition-opacity duration-300 hover:opacity-65"
               >
@@ -511,16 +490,8 @@ export default function Home() {
           <div dir="rtl" className="mt-auto pb-4">
             <a
               href="#trip-planner"
-              onClick={(event) => {
-                event.preventDefault();
-                const toggle = mobileMenuToggleRef.current;
-                if (toggle) {
-                  toggle.checked = false;
-                  toggle.dispatchEvent(new Event("change", { bubbles: true }));
-                }
-                requestAnimationFrame(() => {
-                  window.location.hash = "trip-planner";
-                });
+              onClick={() => {
+                if (mobileMenuToggleRef.current) mobileMenuToggleRef.current.checked = false;
               }}
               className="pointer-events-auto flex w-full items-center justify-center border border-white/50 bg-white/[0.03] px-5 py-4 text-[12px] tracking-[0.08em] text-white transition-all duration-300 hover:bg-white hover:text-black"
             >
